@@ -30,12 +30,6 @@ export function initializeTasks() {
     return temp;
   }
 
-// export function initializeTasks() {
-//     if (tasks.length === 0) {
-//         tasks.push(new Task(1, "Initial Task", "This is the initial task", "Employee 1", 1, false));
-//     }
-//     currentGroupIndex = 1;
-// }
 
 export function completeTask(taskTitle: string): void {
     const task = tasks.find(task => task.title === taskTitle);

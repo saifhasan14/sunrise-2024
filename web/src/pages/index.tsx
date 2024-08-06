@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import TaskCard from "./TaskCard";
-import { initialTasks } from "@/utils/TaskList";
 import Task from "@/model/Task";
 import { Badge } from "antd";
 import CreateModal from "./CreateModal";
@@ -43,10 +42,9 @@ export default function Home() {
     let inProgress = [];
     let todo = allData.filter(
       (item: Task) =>
-        item !== undefined &&
-        item.id !== undefined &&
+        item?.id !== undefined &&
         !item.completed &&
-        activeData.findIndex((i: Task) => i.id === item.id) === -1
+        activeData.findIndex((i: Task) => i.id === item?.id) === -1
     );
 
     if (activeData.length === 1) {
